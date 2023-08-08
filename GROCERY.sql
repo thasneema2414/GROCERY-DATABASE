@@ -62,4 +62,27 @@ SELECT * FROM ORDER_T;
 
 .............................................................
 
+  --CREATE TABLE PAYMENT_T
+
+CREATE TABLE PAYMENT (PY_ID NUMBER PRIMARY KEY,
+                      PRODUCT_ID NUMBER,
+                      PAYMENT_TYPE VARCHAR(30),
+                      PY_DATE DATE NOT NULL,
+                      AMOUNT NUMBER,
+                      FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT_T(P_ID));
+                      
+INSERT INTO PAYMENT VALUES (100000, 10, 'CASH', '12-04-2023', 1300);
+INSERT INTO PAYMENT VALUES (100001, 11, 'CARD', '12-06-2023', 500);
+INSERT INTO PAYMENT VALUES (100002, 11, 'CASH', '11-06-2023', 2000);
+INSERT INTO PAYMENT VALUES (100003, 15, 'CASH', '12-03-2023', 2300);
+INSERT INTO PAYMENT VALUES (100004, 10, 'CASH', '12-04-2023', 1300);
+INSERT INTO PAYMENT VALUES (100005, 18, 'GPAY', '13-03-2023', 450);
+INSERT INTO PAYMENT VALUES (100006, 18, 'CASH', '11-04-2023', 900);
+INSERT INTO PAYMENT VALUES (100007, 10, 'GPAY', '02-03-2023', 1300);
+
+SELECT * FROM PAYMENT;
+
+--------------------------------------------------------------------------------------------
+
+
 

@@ -1,1 +1,19 @@
+--What is the total revenue for each category?
 
+SELECT * FROM PRODUCT_T;
+SELECT * FROM ORDER_T;
+
+--To calculate total revenue for each category, we need
+   --each product NAME and unit price FROM PRODUCT_T and
+   --quantity soled FROM ORDER_T
+   
+--STEPS
+   -- 1. JOIN THE TABLES PRODUCT_T AND ORDER_T
+   -- 2. FETCH PRODUCT NAME, UNIT PRICE AND QUANTITY
+   -- 3. CALCULATE TOTAL PRICE AS (UNIT PRICE * QUANTITY)
+   -- 4. GROUP IT BY PRODUCT
+   
+SELECT P.P_NAME, SUM(P.UNIT_PRICE * O.QUATITY) AS REVENEU
+FROM PRODUCT_T P JOIN ORDER_T O
+ON P.P_ID = O.PRODUCT_ID
+GROUP BY p.p_name;
